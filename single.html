@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Chivaz Store</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Custom CSS for image slider and product image size -->
+  <style>
+    /* Image Slider Styles */
+    #image-slider .slider {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    #image-slider .slider-images {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 400%;
+    }
+
+    #image-slider .slider-images img {
+      width: 25%; /* Each image takes up 25% of the total container width */
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      max-height: 400px; /* Limit height for uniformity, matching product image style */
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 2em;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .slider-button.left {
+      left: 10px;
+    }
+
+    .slider-button.right {
+      right: 10px;
+    }
+
+    /* Product Image Styles */
+    .image.featured img {
+      width: 100%; /* Make sure the image fits its container */
+      height: auto;
+      object-fit: cover;
+      max-width: 500px; /* Limit the maximum width for product image */
+      max-height: 500px; /* Set height to match the product image size */
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Centering Buy Button */
+    .buy-button-container {
+      text-align: center; /* Center the button */
+      margin-top: 20px;
+    }
+
+    .buy-button {
+      display: inline-block;
+      background-color: #007BFF; /* Blue color */
+      color: white;
+      font-size: 18px;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+
+<body class="single is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">Chivaz Store</a></h1>
+      <nav class="links">
+      <nav class="main">
+        <ul>
+          <li class="search">
+            <a class="fa-search" href="#search">Search</a>
+            <form id="search" method="get" action="#">
+              <input type="text" name="query" placeholder="Search" />
+            </form>
+			<li class="cart">
+				<a class="fa-shopping-cart" href="#cart" id="cart-link">Cart</a>
+			  </li>
+			  
+			  <!-- Popup (initially hidden) -->
+			  <div id="popup" class="popup">
+				<p>Item added to cart</p>
+			  </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Image Slider Section -->
+    <section id="image-slider">
+      <div class="slider">
+        <div class="slider-images" id="slider-images">
+          <img src="images/watch (5).jpg" alt="Image 1" />
+          <img src="images/watch (2).jpg" alt="Image 2" />
+          <img src="images/watch (3).jpg" alt="Image 3" />
+          <img src="images/watch (4).jpg" alt="Image 4" />
+		
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Featured Product Image -->
+    <span class="image featured"><img src="images/watch (1).jpg" alt="Product Image" /></span>
+
+    <p>
+		Smart Watches for Men/ Women 1.85” Fitness Tracker Watches for Men/ Women with Call/ Answer Heart Rate/Blood Oxygen/Sleep Monitor 20+ Sports Modes Step Tracker Smart Watch for Android/iOS Phones IPx8
+    </p>
+	<h><strong>About this Item</strong></h>
+	<ul>
+		<li><strong>IPX8 Waterproof & 20+ Sports Modes:</strong> Includes walking, running, swimming, cycling, yoga, and more, perfect for various workouts and outdoor activities. Tracks steps, calories, and exercise data.</li>
+		<li><strong>24/7 Health Monitoring:</strong> Features heart rate, blood pressure, blood oxygen (SpO2), and sleep tracking. Generates personalized reports to improve sleep quality (non-medical).</li>
+		<li><strong>1.85" HD Touchscreen & Long Battery Life:</strong> 300mAh battery with up to 7 days of use and 30 days of standby. Fast charging (2.5 hours) and lightweight design (1.41 oz).</li>
+		<li><strong>Bluetooth Calling & Smart Notifications:</strong> Hands-free calling, voice assistant, music control, and more via Bluetooth BLE5.2. Cannot reply to messages directly.</li>
+		<li><strong>Customizable Watch Faces:</strong> Over 100 built-in dials; upload your own images for customization.</li>
+		<li><strong>Compatibility:</strong> Works with Android (8.0+) and iOS (9.0+). Supports various functions like pedometer, music control, weather, and more.</li>
+	  </ul>
+	  
+
+    <!-- Buy Button Container to Center the Button -->
+    <div class="buy-button-container">
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+
+	<footer style="text-align: center; padding: 20px 0;">
+		<ul class="stats" style="list-style-type: none; display: inline-flex; gap: 20px; align-items: center; justify-content: center; padding: 0;">
+		  <li>
+			<a href="#" class="icon solid fa-heart" id="heart" onclick="toggleHeart()">28</a>
+		  </li>
+		  <li>
+			<a href="#" class="icon solid fa-comment" id="comment" onclick="toggleComment()">128</a>
+		  </li>
+		</ul>
+	  </footer>
+	  
+	  <!-- Include FontAwesome for icons -->
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	  
+	  <style>
+		/* Glowing Effect for Icons */
+		.icon {
+		  font-size: 1.5em; /* Decrease icon size */
+		  cursor: pointer;
+		  transition: color 0.3s, text-shadow 0.3s;
+		}
+	  
+		/* When the heart is liked (clicked) */
+		.liked {
+		  color: red;
+		  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+		}
+	  
+		/* When the comment is active (clicked) */
+		.commented {
+		  color: #00aced; /* A blue color for the comment */
+		  text-shadow: 0 0 10px rgba(0, 172, 237, 0.7);
+		}
+	  
+		/* Styling the stats container */
+		.stats {
+		  display: flex;
+		  justify-content: center;
+		  gap: 30px; /* Space between the icons */
+		  padding: 10px;
+		  font-size: 1.2em;
+		  color: #555;
+		}
+	  
+		/* Styling the individual list items */
+		.stats li {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		}
+		
+		/* Styling for the number next to the icon */
+		.stats li a {
+		  display: flex;
+		  align-items: center;
+		  gap: 5px;
+		}
+		
+	  </style>
+	  
+	  <script>
+		// Initialize counters for heart and comment
+		let heartCount = 28;
+		let commentCount = 128;
+	  
+		// Function to handle heart (like) click event
+		function toggleHeart() {
+		  const heartIcon = document.getElementById("heart");
+	  
+		  // Toggle the "liked" class
+		  heartIcon.classList.toggle("liked");
+	  
+		  // Increment the heart count when clicked
+		  if (heartIcon.classList.contains("liked")) {
+			heartCount++; // Increment if liked
+		  } else {
+			heartCount--; // Decrement if unliked
+		  }
+	  
+		  // Update the heart count display
+		  heartIcon.innerText = heartCount;
+	  
+		  // Popup: "You are loved"
+		  alert("You are loved!");
+		}
+	  
+		// Function to handle comment click event
+		function toggleComment() {
+		  const commentIcon = document.getElementById("comment");
+	  
+		  // Toggle the "commented" class
+		  commentIcon.classList.toggle("commented");
+	  
+		  // Increment the comment count when clicked
+		  if (commentIcon.classList.contains("commented")) {
+			commentCount++; // Increment if commented
+		  } else {
+			commentCount--; // Decrement if un-commented
+		  }
+	  
+		  // Update the comment count display
+		  commentIcon.innerText = commentCount;
+	  
+		  // Popup: "Thank you"
+		  alert("Thank you for your comment!");
+		}
+	  </script>
+	  
+  </div> <!-- End of Wrapper -->
+
+  <!-- Scripts -->
+  <script>
+    let currentSlide = 0;
+
+    function moveSlide(step) {
+      const slides = document.querySelectorAll('#slider-images img');
+      currentSlide += step;
+
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      const sliderImages = document.getElementById('slider-images');
+      sliderImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
