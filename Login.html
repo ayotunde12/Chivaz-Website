@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Chivaz Store</title>
+  <style>
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes moveShape {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .background-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: moveShape 8s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .circle1 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #007BFF, transparent);
+      top: -100px;
+      left: -100px;
+    }
+
+    .circle2 {
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, #00BFFF, transparent);
+      bottom: 50px;
+      right: 80px;
+    }
+
+    .circle3 {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #00C9A7, transparent);
+      top: 50px;
+      right: 50px;
+    }
+
+    .login-container {
+      position: relative;
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 350px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .welcome-message {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-button {
+      width: 100px;
+      padding: 8px 0;
+      font-size: 14px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto 0 auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+
+    .forgot {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    .forgot a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .support-link {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      text-align: center;
+      font-size: 13px;
+      z-index: 1;
+    }
+
+    .support-icon {
+      font-size: 24px;
+      animation: floatUpDown 2s infinite ease-in-out;
+    }
+
+    .support-link a {
+      display: block;
+      color: #555;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    .support-link a:hover {
+      text-decoration: underline;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Shapes -->
+  <div class="background-shape circle1"></div>
+  <div class="background-shape circle2"></div>
+  <div class="background-shape circle3"></div>
+
+  <!-- Login Box -->
+  <div class="login-container">
+    <div class="welcome-message">Welcome to CHIVAZ STORE</div>
+    <h2>Login</h2>
+    <form action="#" method="post">
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button class="login-button" type="submit">Login</button>
+    </form>
+    <div class="forgot">
+      <a href="#">Forgot Password?</a>
+    </div>
+  </div>
+
+  <!-- Floating Support -->
+  <div class="support-link">
+    <div class="support-icon">🎧</div>
+    <a href="https://wa.link/25uvr2">Contact Support Team</a>
+  </div>
+
+</body>
+</html>

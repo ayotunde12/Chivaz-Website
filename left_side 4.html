@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Chivaz Store</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Custom CSS for image slider and product image size -->
+  <style>
+    /* Image Slider Styles */
+    #image-slider .slider {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    #image-slider .slider-images {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 400%;
+    }
+
+    #image-slider .slider-images img {
+      width: 25%; /* Each image takes up 25% of the total container width */
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      max-height: 400px; /* Limit height for uniformity, matching product image style */
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 2em;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .slider-button.left {
+      left: 10px;
+    }
+
+    .slider-button.right {
+      right: 10px;
+    }
+
+    /* Product Image Styles */
+    .image.featured img {
+      width: 100%; /* Make sure the image fits its container */
+      height: auto;
+      object-fit: cover;
+      max-width: 500px; /* Limit the maximum width for product image */
+      max-height: 500px; /* Set height to match the product image size */
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Centering Buy Button */
+    .buy-button-container {
+      text-align: center; /* Center the button */
+      margin-top: 20px;
+    }
+
+    .buy-button {
+      display: inline-block;
+      background-color: #007BFF; /* Blue color */
+      color: white;
+      font-size: 18px;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+
+<body class="single is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">Chivaz Store</a></h1>
+      <nav class="links">
+      <nav class="main">
+        <ul>
+          <li class="search">
+            <a class="fa-search" href="#search">Search</a>
+            <form id="search" method="get" action="#">
+              <input type="text" name="query" placeholder="Search" />
+            </form>
+			<li class="cart">
+				<a class="fa-shopping-cart" href="#cart" id="cart-link">Cart</a>
+			  </li>
+			  
+			  <!-- Popup (initially hidden) -->
+			  <div id="popup" class="popup">
+				<p>Item added to cart</p>
+			  </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Image Slider Section -->
+    <section id="image-slider">
+      <div class="slider">
+        <div class="slider-images" id="slider-images">
+          <img src="images/Drone (5).jpg" alt="Image 1" />
+          <img src="images/Drone (2).jpg" alt="Image 2" />
+          <img src="images/Drone (3).jpg" alt="Image 3" />
+          <img src="images/Drone (4).jpg" alt="Image 4" />
+		
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Featured Product Image -->
+    <span class="image featured"><img src="images/Drone (1).jpg" alt="Product Image" /></span>
+
+    <p>
+      Mini Drone with Camera for Adults Youth - 1080P HD FPV Camera Drones with 90° Adjustable Lens, Gestures Selfie, One Key Start, 360° Flips, Toys Gifts RC Quadcopter for Boys Girls with 2 Batteries
+    </p>
+	<h><strong>About this Item</strong></h>
+	<ul>
+    <ul>
+      <li><strong>1080P HD Camera & FPV Function:</strong> Equipped with 1080P HD 90° manually adjustable lens, you can enjoy HD pictures and videos through the 1080P high quality camera. It helps you capture every beautiful moment in your life. By connecting your phone/iPad with S17 drone with camera, you can enjoy live panoramas and easily share to your social media.</li>
+      <li><strong>Best Drone Toy for youths:</strong> S17 drone is magically simple, just tap the One Key Start/Landing button to start the fly. Altitude Hold keeps the drone at a certain altitude, which makes it so easy to control and shoot high-quality Shots. Using the app's headless mode also provides better control of the drone, especially when the drone is out of sight.</li>
+      <li><strong>Voice Control and Gesture Photograph/Video:</strong>  Draw a route on the app for the mini drone to fly, speak “Fly, Land, Forward, Backward, Left, Right, Photo” to control the flight direction, and show a "V" or "palm" gesture for the camera drone to automatically recognize and take pictures/videos. The built-in G-sensor is compatible with VR glasses for an amazing 3D experience. (excluding VR glasses)</li>
+      <li><strong>2 Modular Batteries:</strong>The included extra battery pack will increase the flight time of the drone. Gravity control, altitude hold, speed control, 360° flips and more make it so easy to beginners or newbies. The best Christmas gift for youths and adults.</li>
+      <li><strong>Professional and Responsive Service Team:</strong>We recommend your first test flight with the S17 drone with propeller guards in a open area . (Note: Outdoor use may be disturbed by wind) If there is any problem with the drone/remote control/APP/drone parts, do not hesitate to contact the seller, we provide 24-hour technical support and responsive in helping buyers.</li>
+  </ul>
+  
+	  </ul>
+	  
+
+    <!-- Buy Button Container to Center the Button -->
+    <div class="buy-button-container">
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+
+	<footer style="text-align: center; padding: 20px 0;">
+		<ul class="stats" style="list-style-type: none; display: inline-flex; gap: 20px; align-items: center; justify-content: center; padding: 0;">
+		  <li>
+			<a href="#" class="icon solid fa-heart" id="heart" onclick="toggleHeart()">75</a>
+		  </li>
+		  <li>
+			<a href="#" class="icon solid fa-comment" id="comment" onclick="toggleComment()">819</a>
+		  </li>
+		</ul>
+	  </footer>
+	  
+	  <!-- Include FontAwesome for icons -->
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	  
+	  <style>
+		/* Glowing Effect for Icons */
+		.icon {
+		  font-size: 1.5em; /* Decrease icon size */
+		  cursor: pointer;
+		  transition: color 0.3s, text-shadow 0.3s;
+		}
+	  
+		/* When the heart is liked (clicked) */
+		.liked {
+		  color: red;
+		  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+		}
+	  
+		/* When the comment is active (clicked) */
+		.commented {
+		  color: #00aced; /* A blue color for the comment */
+		  text-shadow: 0 0 10px rgba(0, 172, 237, 0.7);
+		}
+	  
+		/* Styling the stats container */
+		.stats {
+		  display: flex;
+		  justify-content: center;
+		  gap: 30px; /* Space between the icons */
+		  padding: 10px;
+		  font-size: 1.2em;
+		  color: #555;
+		}
+	  
+		/* Styling the individual list items */
+		.stats li {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		}
+		
+		/* Styling for the number next to the icon */
+		.stats li a {
+		  display: flex;
+		  align-items: center;
+		  gap: 5px;
+		}
+		
+	  </style>
+	  
+	  <script>
+		// Initialize counters for heart and comment
+		let heartCount = 28;
+		let commentCount = 128;
+	  
+		// Function to handle heart (like) click event
+		function toggleHeart() {
+		  const heartIcon = document.getElementById("heart");
+	  
+		  // Toggle the "liked" class
+		  heartIcon.classList.toggle("liked");
+	  
+		  // Increment the heart count when clicked
+		  if (heartIcon.classList.contains("liked")) {
+			heartCount++; // Increment if liked
+		  } else {
+			heartCount--; // Decrement if unliked
+		  }
+	  
+		  // Update the heart count display
+		  heartIcon.innerText = heartCount;
+	  
+		  // Popup: "You are loved"
+		  alert("You are loved!");
+		}
+	  
+		// Function to handle comment click event
+		function toggleComment() {
+		  const commentIcon = document.getElementById("comment");
+	  
+		  // Toggle the "commented" class
+		  commentIcon.classList.toggle("commented");
+	  
+		  // Increment the comment count when clicked
+		  if (commentIcon.classList.contains("commented")) {
+			commentCount++; // Increment if commented
+		  } else {
+			commentCount--; // Decrement if un-commented
+		  }
+	  
+		  // Update the comment count display
+		  commentIcon.innerText = commentCount;
+	  
+		  // Popup: "Thank you"
+		  alert("Thank you for your comment!");
+		}
+	  </script>
+	  
+  </div> <!-- End of Wrapper -->
+
+  <!-- Scripts -->
+  <script>
+    let currentSlide = 0;
+
+    function moveSlide(step) {
+      const slides = document.querySelectorAll('#slider-images img');
+      currentSlide += step;
+
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      const sliderImages = document.getElementById('slider-images');
+      sliderImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
